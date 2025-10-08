@@ -1,0 +1,8 @@
+body { font-family: Arial; background: #fff0f5; }
+h1 { text-align: center; }
+form { margin: 20px auto; width: 300px; padding: 10px; background: #fff; border-radius: 5px; }
+input[type=text], input[type=number] { width: 100%; padding:5px; margin:5px 0; }
+input[type=submit] { width:100%; padding:8px; background:#ff4500; color:#fff; border:none; border-radius:3px; cursor:pointer; }
+table { margin:20px auto; width:80%; border-collapse:collapse; background:#fff; }
+table th, table td { padding:10px; border:1px solid #ccc; text-align:center; }
+a { display:block; text-align:center; margin:10px; text-decoration:none; color:#007bff; }

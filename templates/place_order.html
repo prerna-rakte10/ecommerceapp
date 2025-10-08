@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='orders.css') }}">
+</head>
+<body>
+    <h1>Place Order</h1>
+    <form method="post">
+        Customer Name: <input type="text" name="customer"><br>
+        Product Name: <input type="text" name="product"><br>
+        Quantity: <input type="number" name="quantity" min="1"><br>
+        <input type="submit" value="Place Order">
+    </form>
+    <a href="/orders/view">View Orders</a>
+</body>
+</html>
+
+
+
+<form method="POST">
+    <label>Customer:</label>
+    <select name="customer" required>
+        {% for c in customers %}
+            <option value="{{c}}">{{c}}</option>
+        {% endfor %}
+    </select>
+
+    <label>Product:</label>
+    <select name="product" required>
+        {% for p in products %}
+            <option value="{{p}}">{{p}}</option>
+        {% endfor %}
+    </select>
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity" min="1" required>
+
+    <button type="submit">Place Order</button>
+</form>

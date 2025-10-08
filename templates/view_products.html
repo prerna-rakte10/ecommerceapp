@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+</head>
+<body>
+    <h1>All Products</h1>
+    <table>
+        <tr><th>Name</th><th>Description</th><th>Price</th></tr>
+        {% for p in products %}
+        <tr>
+            <td>{{ p['Name'] }}</td>
+            <td>{{ p['Description'] }}</td>
+            <td>{{ p['Price'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/products/add">Add Product</a>
+</body>
+</html>

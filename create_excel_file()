@@ -1,0 +1,20 @@
+from openpyxl import Workbook
+import os
+
+FILE_PATH = "data.xlsx"
+
+def create_excel_file():
+    if os.path.exists(FILE_PATH):
+        os.remove(FILE_PATH)  # Delete corrupted file
+    wb = Workbook()
+    # Customers sheet
+    ws1 = wb.active
+    ws1.title = "Customers"
+    ws1.append(["Name", "Email", "Phone"])
+    # Products sheet
+    ws2 = wb.create_sheet("Products")
+    ws2.append(["Name", "Description", "Price"])
+    # Orders sheet
+    ws3 = wb.create_sheet("Orders")
+    ws3.append(["Customer", "Product", "Quantity"])
+    wb.save(FILE_PATH)
